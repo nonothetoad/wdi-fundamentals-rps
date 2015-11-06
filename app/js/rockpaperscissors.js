@@ -21,10 +21,16 @@ function randomPlay() {
 /*           Write Your Code Below            */
 ////////////////////////////////////////////////
 
-function getPlayerMove(move) {
+function getPlayerMove() {
+     
     // Write an expression that operates on a variable called `move`
+  
+      
+     //move.toLowerCase; 
     // If a `move` has a value, your expression should evaluate to that value.
+
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
+    
     return /* Your Expression */;
 }
 
@@ -41,8 +47,36 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
-    return winner;
+    if (playerMove === computerMove){
+        winner = 'tie'; 
+        return winner;}
+    else if (playerMove === 'rock' && computerMove === 'scissors'){
+        winner = 'player';
+        return winner;}
+    else if (playerMove === 'rock' && computerMove === 'papper'){
+         winner = 'computer';
+         return winner;}   
+    else if(playerMove === 'paper' && computerMove === 'scissors'){
+          winner = 'computer'
+          return winner;}   
+    else if(playerMove === 'paper' && computerMove === 'rock'){
+          winner = 'player';
+          return winner;}  
+    else if (playerMove === 'scissors' &&  computerMove === 'rock'){ 
+          winner = 'computer';
+          return winner;}
+    else if (playerMove === 'scissors' &&  computerMove === 'paper'){
+          winner = 'player';
+          return winner;}
+    else {
+        winner = 'error';
+          return winner;}
+
+    
+   
 }
+var winner = getWinner('paper','scissors')
+console.log(winner);
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
@@ -52,4 +86,4 @@ function playToFive() {
     /* YOUR CODE HERE */
     return [playerWins, computerWins];
 }
-
+ getPlayerMove();
