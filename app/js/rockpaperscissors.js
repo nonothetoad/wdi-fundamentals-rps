@@ -24,15 +24,15 @@ function randomPlay() {
 function getPlayerMove(move) {
      
     // Write an expression that operates on a variable called `move`
-  
+     
       
-     //move.toLowerCase; 
-     if (move != null ){
+     move.toLowerCase; 
+     if (move != null ){        
        return move;
      } else{ 
-        return randomPlay()
-     }
-    }
+        return randomPlay()     
+   }
+  }
     // If a `move` has a value, your expression should evaluate to that value.
 
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
@@ -93,12 +93,14 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
+    
 
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
      //YOUR CODE HERE 
 
     while(true){
-      if  (getWinner(getPlayerMove(),getComputerMove()) == 'player'){
+      var move = getInput()
+      if  (getWinner(getPlayerMove(move),getComputerMove()) == 'player'){
           playerWins++
      } else{ 
       computerWins++}
